@@ -158,6 +158,8 @@ const BentoLayout = ({ children, currentMood: _currentMood }: BentoLayoutProps) 
   }, [showLoader])
 
   useLayoutEffect(() => {
+    if (!showLoader) return
+
     const timelines: gsap.core.Timeline[] = []
 
     if (bentoRef.current) gsap.set(bentoRef.current, { opacity: 0 })
