@@ -23,6 +23,7 @@ import film5 from '../assets/film5.png'
 import film6 from '../assets/film6.png'
 import film7 from '../assets/film7.png'
 import film8 from '../assets/film8.jpeg'
+import backgroundVideo from '../assets/background.mp4'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -264,14 +265,14 @@ const BentoLayout = ({ children, currentMood }: BentoLayoutProps) => {
       <div ref={bentoRef} className="relative h-screen w-screen overflow-hidden">
         {/* Fallback bg — shows when video fails */}
         <div className="absolute inset-0 z-0" style={{ background: 'var(--color-bento-bg)' }} aria-hidden />
-        {/* Background video — put background.mov in public/ for deployment */}
+        {/* Background video */}
         <video
           autoPlay
           muted
           loop
           playsInline
           className="absolute inset-0 z-0 w-full h-full object-cover"
-          src="/background.mov"
+          src={backgroundVideo}
           onError={(e) => { e.currentTarget.style.display = 'none' }}
         />
         {/* Bento grid */}

@@ -23,6 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-# Large video files (use external hosting for deployment)
-src/assets/background.mov
+# Old large video (replaced by background.mp4)
 public/background.mov
