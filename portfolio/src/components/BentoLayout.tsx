@@ -59,8 +59,8 @@ interface BentoLayoutProps {
 }
 
 const BentoLayout = ({ children, currentMood: _currentMood }: BentoLayoutProps) => {
-  const [showLoader, setShowLoader] = useState(true)
-  const [showContent, setShowContent] = useState(false)
+  const [showLoader, setShowLoader] = useState(false)
+  const [showContent, setShowContent] = useState(true)
   const [imgIdx, setImgIdx] = useState(0)
 
   const [roleIndex, setRoleIndex] = useState(0)
