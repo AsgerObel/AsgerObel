@@ -1,0 +1,199 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* Custom Font - Title1 */
+@font-face {
+  font-family: 'Title1';
+  src: url('./fonts/honkingpersonaluseonlyreg-lxqyz.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom Font - Title2 */
+@font-face {
+  font-family: 'Title2';
+  src: url('./fonts/Mirava Personal Use Only.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom Font - Title3 */
+@font-face {
+  font-family: 'Title3';
+  src: url('./fonts/projekt-blackbird-v2.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Office Code Pro - Regular */
+@font-face {
+  font-family: 'OfficeCodePro';
+  src: url('./fonts/officecodepro-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Office Code Pro - Medium */
+@font-face {
+  font-family: 'OfficeCodePro';
+  src: url('./fonts/officecodepro-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Office Code Pro - Bold */
+@font-face {
+  font-family: 'OfficeCodePro';
+  src: url('./fonts/officecodeprod-regular.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Syne', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-title1: 'Title1', sans-serif;
+  --font-title2: 'Title2', sans-serif;
+  --font-title3: 'Title3', sans-serif;
+  --font-office-code: 'OfficeCodePro', monospace;
+  --font-montserrat: 'Montserrat', sans-serif;
+}
+
+/* MOOD 1: Warm Cream (Clarisse Michard inspired) */
+.mood-1 {
+  --color-bg: #EDE8E4;
+  --color-text: #1A1A1A;
+  --color-accent: #FF5733;
+  --color-border: #1A1A1A;
+  --color-bento-bg: #ddd8d3;
+  --color-card-bg: #f5f0ec;
+  --color-card-outer: #e8e3de;
+  --font-serif: 'Syne', sans-serif;
+}
+
+/* MOOD 2: Fightclub (The Basement) */
+.mood-2 {
+  --color-bg: #111111;
+  --color-text: #E3DAC9;
+  --color-accent: #8B1E1E;
+  --color-border: #E3DAC9;
+  --color-bento-bg: #0c0c0c;
+  --color-card-bg: #1a1a1a;
+  --color-card-outer: #141414;
+  --font-serif: 'Space Mono', monospace;
+}
+
+/* MOOD 3: Matrix */
+.mood-3 {
+  --color-bg: #0D0208; /* Dark/Black fallback */
+  --color-text: #00FF41;
+  --color-accent: #00FF41;
+  --color-border: #00FF41;
+  --color-bento-bg: #000000;
+  --color-card-bg: #0a0a0a;
+  --color-card-outer: #060606;
+  --font-serif: 'Space Mono', monospace;
+}
+
+/* MOOD 4: MIB */
+.mood-4 {
+  --color-bg: #000000;
+  --color-text: #FFFFFF;
+  --color-accent: #E5E4E2;
+  --color-border: #E5E4E2; /* Chrome Accent for grid */
+  --color-bento-bg: #050505;
+  --color-card-bg: #111111;
+  --color-card-outer: #0c0c0c;
+  --font-serif: 'Inter', sans-serif;
+}
+
+/* Mood 2 Text Effect removed for consistency */
+
+/* Other moods removed for now */
+/*.mood-3 { ... } */
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: none; /* Firefox */
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.6s ease, color 0.6s ease;
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Hide scrollbar for Chrome/Safari/Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Smooth transitions for mood changes */
+section, div, h1, h2, h3, p, span, a, button {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+::selection {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* Office Code Pro Utility Classes */
+.font-office-code {
+  font-family: var(--font-office-code);
+}
+
+.font-office-code-regular {
+  font-family: var(--font-office-code);
+  font-weight: 400;
+}
+
+.font-office-code-medium {
+  font-family: var(--font-office-code);
+  font-weight: 500;
+}
+
+.font-office-code-bold {
+  font-family: var(--font-office-code);
+  font-weight: 700;
+}
+
+/* No-scrollbar utility for bento panels */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide Spline watermark */
+#spline-watermark,
+[id^="spline"] a[href*="spline"],
+canvas + div > a {
+  display: none !important;
+}
