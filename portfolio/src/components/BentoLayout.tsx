@@ -58,7 +58,7 @@ interface BentoLayoutProps {
   onCycleMood?: () => void
 }
 
-const BentoLayout = ({ children, currentMood }: BentoLayoutProps) => {
+const BentoLayout = ({ children, currentMood: _currentMood }: BentoLayoutProps) => {
   const [showLoader, setShowLoader] = useState(true)
   const [showContent, setShowContent] = useState(false)
   const [imgIdx, setImgIdx] = useState(0)

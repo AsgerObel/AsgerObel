@@ -11,9 +11,6 @@ const colors = [
   '#ffffff'  // White
 ]
 
-const LOGO_WIDTH = 200
-const LOGO_HEIGHT = 100
-
 const Screensaver = () => {
   const [isActive, setIsActive] = useState(false)
   const [color, setColor] = useState(colors[0])
@@ -23,8 +20,8 @@ const Screensaver = () => {
   
   const velocity = useRef({ x: 1.5, y: 1.5 })
   const colorRef = useRef(colors[0]) // Track current color
-  const timerRef = useRef<number>()
-  const animationRef = useRef<number>()
+  const timerRef = useRef<number | undefined>(undefined)
+  const animationRef = useRef<number | undefined>(undefined)
   const containerRef = useRef<HTMLDivElement>(null)
   const logoRef = useRef<HTMLDivElement>(null)
 
